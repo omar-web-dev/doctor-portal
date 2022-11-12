@@ -1,6 +1,6 @@
-import { primary } from 'daisyui/src/colors';
 import React from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaRegClock } from 'react-icons/fa';
+import Primary from '../../Components/Primary';
 import Banding from './Banding';
 
 const Banner = () => {
@@ -28,19 +28,19 @@ const Banner = () => {
         },
     ]
     return (
-        <div className=" bg-base-100 py-10">
-            <div className="flex items-center  lg:flex-row-reverse">
+        <div className=" bg-base-100 p-[8%] py-10">
+            <div className="lg:flex items-center  lg:flex-row-reverse">
                 <div className='lg:w-1/2'>
                     <img src={"https://i.ibb.co/qnJqRvg/chair.png"} className="max-w-full rounded-lg shadow-2xl" alt='banner' />
                 </div>
-                <div className='lg:w-1/2'>
-                    <h1 className="text-5xl font-bold">
+                <div className='mt-5 lg:mt-0 lg:w-1/2'>
+                    <h1 className=" text-4xl lg:text-5xl  font-bold">
                         Your New Smile Starts Here
                     </h1>
                     <p className="py-6">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
                     </p>
-                    <button className="bg-gradient-to-r from-primary to-secondary text-gray-50 btn btn-primary">Get Started</button>
+                    <Primary>Get Started</Primary>
                 </div>
             </div>
             <div className='gap-5 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
