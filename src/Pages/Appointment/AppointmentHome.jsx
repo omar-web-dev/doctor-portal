@@ -1,7 +1,7 @@
 import React from 'react';
 import Primary from '../../Components/Primary';
 
-const Appointment = () => {
+const AppointmentHome = () => {
     return (
         <div className="card rounded-none bg-base-100  image-full">
             <figure>
@@ -21,4 +21,4 @@ const Appointment = () => {
     );
 };
 
-export default Appointment;
+export default AppointmentHome;
