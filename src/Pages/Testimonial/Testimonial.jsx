@@ -29,7 +29,7 @@ const Testimonial = () => {
         }
     ]
     return (
-        <div className="mt-10 px-[8%] ">
+        <div className="mt-10 px-[8%] max-w-[1440px] mx-auto">
             <div className="flex justify-between">
                 <div>
                     <p className='text-primary font-bold'>Testimonial</p>

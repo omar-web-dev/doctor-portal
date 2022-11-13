@@ -9,7 +9,7 @@ const Home = () => {
     
     return (
         <div>
-            <div className='max-w-[1440px] mx-auto'>
+            <div>
                 <Banner />
                 <Services/>
                 <AppointmentHome/>

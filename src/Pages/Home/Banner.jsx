@@ -28,7 +28,7 @@ const Banner = () => {
         },
     ]
     return (
-        <div className=" bg-base-100 p-[8%] py-10">
+        <div className="max-w-[1440px] mx-auto bg-base-100 p-[8%] py-10">
             <div className="lg:flex items-center  lg:flex-row-reverse">
                 <div className='lg:w-1/2'>
                     <img src={"https://i.ibb.co/qnJqRvg/chair.png"} className="max-w-full rounded-lg shadow-2xl" alt='banner' />
