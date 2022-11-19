@@ -44,7 +44,7 @@ const Banner = () => {
                 </div>
             </div>
             <div className='gap-5 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                {brandingInfo.map(bc => <Banding key={bc=bc.id} bandingCard={bc}/> )}
+                {brandingInfo?.map(bc => <Banding key={bc=bc.id} bandingCard={bc}/> )}
             </div>
         </div>
     );

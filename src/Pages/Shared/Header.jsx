@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvide';
 
 const Header = () => {
+    const { logOut, user } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
+    }
+
     const navItems =
         <>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/'>About</Link></li>
             <li><Link to='appointment'>Appointment</Link></li>
-            <li><Link to='/'>Reviews</Link></li>
             <li><Link to='/'>Contact Us</Link></li>
-            <li><Link to='/'>Login</Link></li>
+            <li><Link to='/dashboard'>Dashboard</Link></li>
+            {user?.uid ?
+                <>
+                    {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
+                    <li><button onClick={handleLogOut}>Sign out</button></li>
+
+                </>
+                :
+                <>
+                    <li><Link to='login'>Sign in</Link></li>
+                    <li><Link to='sign-up'>Sign Up</Link></li>
+                </>}
         </>
     return (
-        <div className="mx-auto max-w-[1440px]">
+        <div className="mx-auto max-w-[1440px] py-5 px-[3%]">
             <div className=" bg-base-100">
                 <div className="navbar justify-between md:hidden">
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Doctor Portal</Link>
@@ -25,7 +42,7 @@ const Header = () => {
                         </ul>
                     </div>
                 </div>
-{/* desktop   */}
+                {/* desktop   */}
                 <div className='hidden md:flex justify-between'>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Doctor Portal</Link>
                     <div className="navbar-end hidden md:w-full md:flex">

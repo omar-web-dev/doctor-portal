@@ -1,8 +1,8 @@
 import React from 'react';
 import Primary from '../../Components/Primary';
-import AppointmentBook from './AppointmentBook';
 
 const AppointmentHome = () => {
+   
     return (
         <div className="bg-[url('https://i.ibb.co/h8pXZ0N/appointment.png')] bg-base-100  image-full mt-48">
             <div className='lg:flex max-w-[1440px] mx-auto '>

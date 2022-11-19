@@ -31,7 +31,7 @@ const Services = () => {
                 <p className="text-2xl">Services We Provide</p>
             </div>
             <div className='gap-5 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                {serviceInfo.map(si => <ServiceCard key={si.id} services={si} />)}
+                {serviceInfo?.map(si => <ServiceCard key={si.id} services={si} />)}
             </div>
             <div className="p-[8%] lg:card md:flex items-center lg:card-side bg-base-100  shadow-xl">
                 <div className='px-5 md:w-1/2 lg:w-2/5 md:flex items-center'>
