@@ -40,18 +40,6 @@ const SignUp = () => {
             });
     }
 
-    const getToken =  email => {
-        fetch(`http://localhost:5000/jwt?email=${email}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if(data.accessToken){
-                localStorage.setItem('accessToken', data.accessToken)
-                // navigate('/');
-            }
-        })
-    }
-
     const saveUser = (name, email, password) =>{
         const user ={name, email, password};
         fetch('http://localhost:5000/users', {
@@ -63,8 +51,20 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data => {
-            getToken()
+            getToken(email)
             setCreatedUserEmail(email);
+        })
+    }
+    
+    const getToken = (email) => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            if(data.accessToken){
+                localStorage.setItem('accessToken', data.accessToken)
+                // navigate('/');
+            }
         })
     }
 

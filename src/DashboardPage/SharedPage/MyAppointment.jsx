@@ -24,7 +24,7 @@ const MyAppointment = () => {
         .then(res => res.json())
         .then(data => setAppointment(data))
         
-    }, [])
+    }, [user])
 
     return (
         <div className='bg-gray-100 min:h-screen p-10'>
