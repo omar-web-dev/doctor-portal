@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddDoctor from "../DashboardPage/AddDoctor";
+import ManageDoctors from "../DashboardPage/ManageDoctors ";
 import MyAppointment from "../DashboardPage/SharedPage/MyAppointment";
 import DashboardLayOut from "../Layout/DashboardLayOut";
 import Main from "../Layout/Main";
@@ -40,6 +42,18 @@ const router = createBrowserRouter([
       {
         path : '/dashboard',
         element : <MyAppointment />
+      },
+      {
+        path : '/dashboard/appointment',
+        element : <MyAppointment />
+      },
+      {
+        path : '/dashboard/add-doctor',
+        element : <AddDoctor />
+      },
+      {
+        path : '/dashboard/manage-doctors',
+        element : <ManageDoctors />
       },
     ]
   }

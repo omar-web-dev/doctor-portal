@@ -15,7 +15,7 @@ const Header = () => {
         <>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/'>About</Link></li>
-            <li><Link to='appointment'>Appointment</Link></li>
+            <li><Link to='../appointment'>Appointment</Link></li>
             <li><Link to='/'>Reviews</Link></li>
             <li><Link to='/'>Contact Us</Link></li>
             {user?.uid ?
@@ -47,7 +47,7 @@ const Header = () => {
                 <div className='hidden md:flex justify-between'>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Doctor Portal</Link>
                     <div className="navbar-end hidden md:w-full md:flex">
-                        <ul className="menu items-center menu-horizontal p-0 text-black text-lg active:bg-black">
+                        <ul className="menu items-center menu-horizontal p-0 text-black text-lg ">
                             {navItems}
                         </ul>
                     </div>

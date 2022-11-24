@@ -20,18 +20,22 @@ const MyAppointment = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+        fetch(`http://localhost:5000/bookings?email=${user?.email}`, {
+            headers : {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`  
+            }
+        })
         .then(res => res.json())
         .then(data => setAppointment(data))
         
     }, [user])
 
     return (
-        <div className='bg-gray-100 min:h-screen p-10'>
+        <div className='bg-gray-100  min:h-[700px] p-10'>
             <h3 className="text-3xl py-3 ">
                 My Appointment
             </h3>
-            <table className="table  w-full">
+            <table className="table w-full">
                 <thead>
                     <tr>
                         <th>SL</th>

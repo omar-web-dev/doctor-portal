@@ -5,18 +5,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 // import useToken from '../../hooks/useToken';
 import { AuthContext } from '../Context/AuthProvide';
+import useToken from '../Hooks/useTooken';
 // https://meet.google.com/fbt-mjeu-sij
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUPError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('')
-    // const [token] = useToken(createdUserEmail);
+    const [token] = useToken(createdUserEmail);
     const navigate = useNavigate();
 
-    // if(token){
+    if(token){
         navigate('/');
-    // }
+    }
 
     const handleSignUp = (data) => {
         setSignUPError('');
@@ -51,22 +52,10 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data => {
-            getToken(email)
             setCreatedUserEmail(email);
         })
     }
     
-    const getToken = (email) => {
-        fetch(`http://localhost:5000/jwt?email=${email}`)
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
-            if(data.accessToken){
-                localStorage.setItem('accessToken', data.accessToken)
-                // navigate('/');
-            }
-        })
-    }
 
     return (
         <div className='h-[800px] flex justify-center items-center'>

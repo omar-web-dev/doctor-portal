@@ -46,7 +46,7 @@ const Header = () => {
                 <div className='hidden md:flex justify-between'>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Doctor Portal</Link>
                     <div className="navbar-end hidden md:w-full md:flex">
-                        <ul className="menu menu-horizontal p-0 text-black text-lg active:bg-black">
+                        <ul className="menu menu-horizontal p-0 text-black text-lg">
                             {navItems}
                         </ul>
                     </div>
